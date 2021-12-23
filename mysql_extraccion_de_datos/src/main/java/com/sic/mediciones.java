@@ -2,15 +2,30 @@ package com.sic;
 
 import java.util.ArrayList;
 
-public class mediciones {
-    private ArrayList<medicion> mdns;
+/**
+ * Esta clase contiene metodos para manejar grupos de varias mediciones 
+ * Por: Fernando Daniel Ramirez Cruz
+ * 
+ */
 
+public class mediciones {
+    private ArrayList<medicion> mdns; // Es un arreglo dinamico que contiene mediciones
+
+    /**
+     * Constructor con mediciones en blanco
+     */
     public mediciones(){
         this.mdns = new ArrayList<medicion>();
     }
 
+    /**
+     * Constructor utilizando un arreglo de mediciones
+     * 
+     * @param datos Es un arreglo string que contiene informacion de las mediciones
+     */
     public mediciones(ArrayList<String[]> datos){
         mdns = new ArrayList<medicion>();
+        // Se asigna cada medicion al arreglo dinamico
         for(int i = 0; i < datos.size(); i++)
         {
             /*System.out.print("La linea de String tiene "+datos.get(i).length+" dato(s): ");
@@ -20,7 +35,7 @@ public class mediciones {
             }*/
             
             
-            if(datos.get(i).length == 3)
+            if(datos.get(i).length == 5)
             {
                 //System.out.print("Se agrega el dato");
                 this.mdns.add(new medicion(datos.get(i).clone()));
